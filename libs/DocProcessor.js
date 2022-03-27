@@ -34,10 +34,20 @@ class DocProcessor {
 
   async getAddressDetails(value) {
     let addressObject = this.addressObjectFormatter(value);
-    console.log(addressObject);
     //* get Place Details
     const addressDetails = await getAddressGeocode(addressObject);
-    return addressDetails;
+    return {
+      name: cleanString(value.name),
+      website: cleanString(value.Website),
+      email: cleanString(value.Email),
+      organizer: cleanString(value.Organiser),
+      profile: cleanString(value.profile),
+      blockQuote: cleanString(value.blockQuote),
+      founded: cleanString(value.founded),
+      telephone: cleanString(value.telephone),
+      fax: cleanString(value.fax),
+      ...addressDetails[0],
+    };
   }
 }
 
