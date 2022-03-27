@@ -14,12 +14,18 @@ exports.connectDB = async () => {
   }
 };
 
-// Get All bienials
+//* Close connection to the DB
+exports.closeConnection = async () => {
+  await mongoose.connection.close();
+};
+
+//* Get All bienials
 exports.getAllBienials = async () => {
   const allBienial = await bienials.find({});
   return allBienial;
 };
 
+//* Create Bienials
 exports.createBienials = async (bienial) => {
   const response = await bienials.create(bienial);
   return response;
