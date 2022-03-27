@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-//* Top University SCHEMA
-const BienialsSchema = mongoose.Schema({
+//*  SCHEMA
+const bienialsSchema = mongoose.Schema({
   name: {
     type: "String",
   },
@@ -38,4 +38,8 @@ const BienialsSchema = mongoose.Schema({
 });
 
 //* CREATE THE MODEL
-exports.bienials = mongoose.model("bienialsupdated", BienialsSchema);
+exports.bienials = mongoose.model(
+  "bienialsupdated",
+  bienialsSchema,
+  "bienialsupdated"
+);
