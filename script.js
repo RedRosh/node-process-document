@@ -24,6 +24,7 @@ const main = async () => {
   for (let doc of allBienials) {
     const placeDetails = await docProcessor.getAddressDetails(doc);
     data.push(placeDetails);
+    console.log(`${data.length} / ${allBienials}`);
   }
   //* Generate the Csv
   await generateCsv("Data", data);
